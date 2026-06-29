@@ -8,13 +8,13 @@ kafka-console-consumer.sh
 ############################
 
 # create a topic with 3 partitions
-kafka-topics.sh --bootstrap-server localhost:9092 --topic second_topic --create --partitions 3
+kafka-topics --bootstrap-server localhost:9092 --topic second_topic --create --partitions 3
 
 # consuming
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic second_topic
 
 # other terminal
-kafka-console-producer.sh --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic second_topic
+kafka-console-producer --bootstrap-server localhost:9092 --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner --topic second_topic
 
 # consuming from beginning
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic second_topic --from-beginning

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # create our topic with appropriate configs
-kafka-topics.sh --bootstrap-server localhost:9092 --create --topic employee-salary --partitions 1 --replication-factor 1 --config cleanup.policy=compact --config min.cleanable.dirty.ratio=0.001 --config segment.ms=5000
+kafka-topics --bootstrap-server localhost:9092 --create --topic employee-salary --partitions 1 --replication-factor 1 --config cleanup.policy=compact --config min.cleanable.dirty.ratio=0.001 --config segment.ms=5000
 
 # Describe Topic Configs
-kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic employee-salary
+kafka-topics --bootstrap-server localhost:9092 --describe --topic employee-salary
 
 # in a new tab, we start a consumer
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic employee-salary --from-beginning --property print.key=true --property key.separator=,
