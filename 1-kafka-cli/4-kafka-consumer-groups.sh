@@ -20,7 +20,7 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
 
 # start a consumer
-kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
+kafka-console-consumer --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
 
 # describe the group now
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
@@ -29,7 +29,7 @@ kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group console-consumer-10592
 
 # start a console consumer
-kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
+kafka-console-consumer --bootstrap-server localhost:9092 --topic first_topic --group my-first-application
 
 # describe the group again
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
